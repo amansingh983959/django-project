@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -51,10 +52,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myfirstwebproject.urls'
 
+# E:\internship\jango\myfirstwebproject\templates
+#E:\internship\jango\manage.py
+#E:\internship\jango\myfirstwebproject\templates
+# E:\internship\jango\myfirstwebproject\templates
+
+TEMPLATES_DIR = BASE_DIR / 'myfirstwebproject' / 'templates'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,14 +79,16 @@ WSGI_APPLICATION = 'myfirstwebproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+# E:\internship\jango\creds\mysql.cnf
+# E:\internship\jango\manage.py
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "OPTIONS": {
+            "read_default_file":f"{BASE_DIR}/creds/aman.cnf",
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

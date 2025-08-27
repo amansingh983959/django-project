@@ -1,7 +1,7 @@
 """
-URL configuration for myfirstwebproject project.
+URL configuration for django_env project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The urlpatterns list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
 Examples:
 Function views
@@ -14,14 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import include, path 
-from .views import index , home 
+from django.urls import path
+from .views import blog_index , get_post,create_post
+
 
 urlpatterns = [
+     path('',blog_index ),
+     path('post/', get_post),
+     path('post/new', create_post)
 
-    path('admin/', admin.site.urls),
-    path('hello/', index),
-    path('', home),
-    path('blog/', include('blog.urls'))
 ]

@@ -1,0 +1,5 @@
+[client]
+database = "work"
+user = "root"
+password = "Aman/983959@"
+default-character-set = 'utf8mb4'
